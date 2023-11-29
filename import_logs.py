@@ -111,6 +111,13 @@ EXCLUDED_USER_AGENTS = (
     'yandex',
     'zabbix',
     'googlestackdrivermonitoring',
+    ##
+    'seznambot',
+    'bingbot',
+    'yandexbot',
+    'bytedance.com',
+    'semrushbot',
+    'updown.io',
 )
 
 MATOMO_DEFAULT_MAX_ATTEMPTS = 3
@@ -545,8 +552,9 @@ _COMMON_LOG_FORMAT = (
 _NCSA_EXTENDED_LOG_FORMAT = (_COMMON_LOG_FORMAT +
     r'\s+"(?P<referrer>.*?)"\s+"(?P<user_agent>.*?)"'
 )
-
-
+_OPNSENSE_LOG_FORMAT = (_NCSA_EXTENDED_LOG_FORMAT +
+    r'\s+"[^"]".*sn="(?P<host>.*?)" rt=(?P<generation_time_secs>[.\d]+)'
+)
 _S3_LOG_FORMAT = (
     r'\S+\s+(?P<host>\S+)\s+\[(?P<date>.*?)\s+(?P<timezone>.*?)\]\s+(?P<ip>[\w*.:-]+)\s+'
     r'(?P<userid>\S+)\s+\S+\s+\S+\s+\S+\s+"(?P<method>\S+)\s+(?P<path>.*?)\s+\S+"\s+(?P<status>\d+)\s+\S+\s+(?P<length>\S+)\s+'
@@ -592,7 +600,8 @@ FORMATS = {
     'nginx_json': NginxJsonFormat('nginx_json'),
     'ovh': RegexFormat('ovh', _OVH_FORMAT),
     'haproxy': RegexFormat('haproxy', _HAPROXY_FORMAT, '%d/%b/%Y:%H:%M:%S.%f'),
-    'gandi': RegexFormat('gandi', _GANDI_SIMPLE_HOSTING_FORMAT, '%d/%b/%Y:%H:%M:%S')
+    'gandi': RegexFormat('gandi', _GANDI_SIMPLE_HOSTING_FORMAT, '%d/%b/%Y:%H:%M:%S'),
+    'opnsense': RegexFormat('opnsense', _OPNSENSE_LOG_FORMAT),
 }
 
 ##
