@@ -118,6 +118,13 @@ EXCLUDED_USER_AGENTS = (
     'bytedance.com',
     'semrushbot',
     'updown.io',
+    # issue #2
+    'dotbot/',
+    'mj12bot/',
+    'petalbot',
+    'amazonbot',
+    'gptbot',
+    'friendlycrawler',
 )
 
 MATOMO_DEFAULT_MAX_ATTEMPTS = 3
