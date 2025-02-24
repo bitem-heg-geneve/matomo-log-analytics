@@ -1,0 +1,43 @@
+[[project]]
+name="SIBiLS - BiodiversityPMC"
+idSite=21
+urls=[
+    "https://biodiversitypmc.sibils.org/api/",
+    "https://sparql.sibils.org/sparql?",
+]
+
+[[project]]
+name="SIBiLS - BiotXplorer"
+idSite=22
+urls=[
+    "https://denver.hesge.ch/biotic/api/",
+]
+
+[[project]]
+name="SIBiLS - CellTriage"
+idSite=23
+urls=[
+    "https://celltriage.sibils.org/api/",
+    "https://celltriage.sibils.org/results/week/ids.txt",
+]
+
+[[project]]
+name="SIBiLS - Variomes"
+idSite=24
+urls=[
+    "https://variomes.sibils.org/api/",
+]
+
+[[project]]
+name="SIBiLS - SynVar"
+idSite=25
+urls=[
+   "https://synvar.sibils.org/generate/literature/fromMutation",
+]
+
+[[project]]
+name="OCRWeb"
+idSite=26
+urls=[
+    "https://ocrweb.text-analytics.ch/",
+]
